@@ -10,7 +10,6 @@
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     @if (Auth::user()->is_writer || Auth::user()->is_admin)
-                        {{-- Say Goodmorning/Good afternoon/etc depending on current time.  --}}
                         <h2
                             class="mt-5 mb-1 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-tl from-red-500 to-red-800">
                             Welcome back, {{ Auth::user()->name }}!</h2>
@@ -27,8 +26,7 @@
                     </div>
 
 
-                    <rssapp-wall id="vDaOY1CorAHgziXF"></rssapp-wall>
-                    <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+
                     <SCRIPT>
                         ! function(d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0];

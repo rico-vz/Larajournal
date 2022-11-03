@@ -37,7 +37,6 @@ Route::group(['prefix' => 'v-admin'], function () {
     Voyager::routes();
 });
 
-// Handle laravel breeze
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

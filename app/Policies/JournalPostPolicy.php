@@ -42,7 +42,6 @@ class JournalPostPolicy
      */
     public function create(User $user)
     {
-        // If the user is an admin or a writer, they can create a journal post
         return $user->is_admin || $user->is_writer ? Response::allow() : Response::deny('You are not allowed to create a post.');
     }
 
