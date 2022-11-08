@@ -11,13 +11,13 @@
         "php": "^8.0.2",
         "anhskohbo/no-captcha": "^3.4",
         "davmixcool/laravel-meta-manager": "^1.2",
+        "doctrine/dbal": "^3.5",
         "guzzlehttp/guzzle": "^7.2",
         "jrean/laravel-user-verification": "^10.0",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "spatie/laravel-backup": "^8.1",
-        "tcg/voyager": "^1.6",
         "webpatser/laravel-uuid": "^4.0"
     },
     "require-dev": {
