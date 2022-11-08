@@ -51,5 +51,13 @@ class DatabaseSeeder extends Seeder
                 'author_id' => $this->faker->numberBetween(1, 10),
             ]);
         }
+
+        DB::table('users')->insert([
+            'name' => 'Admin',
+            'email' => 'yourname@mail.com',
+            'password' => bcrypt('test1234'),
+            'is_admin' => 1,
+            'is_writer' => 1,
+        ]);
     }
 }
