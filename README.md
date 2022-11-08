@@ -42,3 +42,64 @@ Administrators can promote/demote accounts, create new posts, edit/delete any po
 
 **Server:** Nginx, MySQL 
 
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone git@github.com:rico-vz/Larajournal.git
+```
+
+Go to the project directory
+
+```bash
+  cd Larajournal
+```
+
+Install dependencies
+
+```bash
+  composer install
+```
+
+Set-up the Laravel app
+
+```bash
+  php artisan key:generate
+```
+
+Copy the .env example to its own file, and edit it to its needs.
+
+```bash
+  cp .env.example .env
+
+```
+
+Generate Laravel App Key
+
+```bash
+php artisan key:generate
+```
+
+Migrate the database
+
+```bash
+php artisan migrate
+```
+
+Seed the database with posts + 1 admin user
+
+```bash
+php artisan db:seed
+```
+The login details are:
+
+yourname@mail.com:test1234
+
+
+Finally, serve the website:
+
+```bash
+php artisan serve
+```
