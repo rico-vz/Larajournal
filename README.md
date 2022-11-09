@@ -44,6 +44,10 @@ Administrators can promote/demote accounts, create new posts, edit/delete any po
 
 
 ## Run Locally
+Prerequisites:
+- PHP (https://www.php.net/manual/en/install.php)
+- Composer (https://getcomposer.org/download/)
+- MySQL (https://dev.mysql.com/downloads/installer/)
 
 Clone the project
 
