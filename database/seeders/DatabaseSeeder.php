@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
+use DB;
 use Faker\Generator;
 use Illuminate\Container\Container;
-
-use DB;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -37,6 +36,7 @@ class DatabaseSeeder extends Seeder
     {
         return Container::getInstance()->make(Generator::class);
     }
+
     /**
      * Seed the application's database.
      *
@@ -46,17 +46,17 @@ class DatabaseSeeder extends Seeder
     {
         for ($i = 0; $i < 15; $i++) {
             DB::table('journal_posts')->insert([
-                'title' => $this->faker->sentence,
-                'content' => $this->faker->paragraph(15),
+                'title'     => $this->faker->sentence,
+                'content'   => $this->faker->paragraph(15),
                 'author_id' => $this->faker->numberBetween(1, 10),
             ]);
         }
 
         DB::table('users')->insert([
-            'name' => 'Admin',
-            'email' => 'yourname@mail.com',
-            'password' => bcrypt('test1234'),
-            'is_admin' => 1,
+            'name'      => 'Admin',
+            'email'     => 'yourname@mail.com',
+            'password'  => bcrypt('test1234'),
+            'is_admin'  => 1,
             'is_writer' => 1,
         ]);
     }

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JournalPostController;
 use App\Http\Controllers\UserRoleController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +45,4 @@ Route::get('/dashboard/users', function () {
     return view('dashboarduser');
 })->middleware(['auth', 'verified'])->name('dashboard.users');
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

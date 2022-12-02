@@ -22,8 +22,8 @@ class JournalPostFactory extends Factory
         // \App\Models\JournalPost::factory()->times(15)->create();
 
         return [
-            'title' => $this->faker->sentence,
-            'content' => $this->faker->paragraph(15),
+            'title'     => $this->faker->sentence,
+            'content'   => $this->faker->paragraph(15),
             'author_id' => $this->faker->numberBetween(1, 10),
         ];
     }
