@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\JournalPost;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-
 
 class JournalPostController extends Controller
 {
@@ -24,6 +21,7 @@ class JournalPostController extends Controller
     {
         // Show all journal posts
         $journalPosts = JournalPost::all();
+
         return view('list', ['posts' => $journalPosts]);
     }
 
@@ -35,13 +33,15 @@ class JournalPostController extends Controller
     public function create()
     {
         $this->authorize('create', JournalPost::class);
+
         return view('create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -50,9 +50,9 @@ class JournalPostController extends Controller
         // Store a new journal post
 
         $journalPost = JournalPost::create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'author_id' => $request->author_id
+            'title'     => $request->title,
+            'content'   => $request->content,
+            'author_id' => $request->author_id,
         ]);
 
         return redirect()->route('journal.show', ['postId' => $journalPost->id]);
@@ -61,7 +61,8 @@ class JournalPostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\JournalPost  $journalPost
+     * @param \App\Models\JournalPost $journalPost
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(JournalPost $postId)
@@ -72,7 +73,8 @@ class JournalPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\JournalPost  $journalPost
+     * @param \App\Models\JournalPost $journalPost
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(JournalPost $journalPost)
@@ -85,8 +87,9 @@ class JournalPostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\JournalPost  $journalPost
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\JournalPost  $journalPost
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, JournalPost $journalPost)
@@ -94,7 +97,7 @@ class JournalPostController extends Controller
         $this->authorize('update', $journalPost);
         // Update a journal post
         $journalPost->update([
-            'title' => $request->title,
+            'title'   => $request->title,
             'content' => $request->content,
         ]);
 
@@ -104,7 +107,8 @@ class JournalPostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\JournalPost  $journalPost
+     * @param \App\Models\JournalPost $journalPost
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(JournalPost $journalPost)
